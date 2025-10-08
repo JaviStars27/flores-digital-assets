@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flores Digital Assets - Broker Especializado en Flippa</title>
+    <style>
+        :root {
+            --primary: #002B55;
+            --secondary: #D4AF37;
+            --white: #ffffff;
+            --gray: #f8f9fa;
+            --text: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--text);
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #003366 100%);
+            color: var(--white);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #003366 100%);
+            color: var(--white);
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Sections */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            font-size: 2rem;
+        }
+        
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        /* Process */
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+        
+        .process-step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--secondary);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: bold;
+        }
+        
+        /* About */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .profile-img {
+            width: 100%;
+            border-radius: 10px;
+            background: var(--gray);
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        /* Contact */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        button {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        button:hover {
+            background: #003366;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">Flores <span>Digital Assets</span></div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Vende Tu Sitio Web Más Rápido y Por Más Dinero en Flippa</h1>
+            <p>Como tu broker especializado, me encargo de todo el proceso para maximizar tu ganancia y acelerar la venta</p>
+            <a href="#contact" class="cta-button">Obtener Evaluación Gratuita</a>
+        </div>
+    </section>
+
+    <!-- Why Choose Me -->
+    <section id="why">
+        <div class="container">
+            <h2>¿Por Qué Elegir un Broker Profesional?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">$</div>
+                    <h3>Precios Más Altos</h3>
+                    <p>Obtén hasta un 30-50% más por tu sitio web con nuestra estrategia de valoración y negociación</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Ventas Más Rápidas</h3>
+                    <p>Reduce el tiempo de venta de meses a semanas con nuestra promoción activa</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✔</div>
+                    <h3>Proceso Seguro</h3>
+                    <p>Protección completa contra estafas y manejo profesional de la transferencia</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✌</div>
+                    <h3>Sin Estrés</h3>
+                    <p>Yo manejo todas las negociaciones, preguntas y el proceso técnico por ti</p>
+				</div>
+                <div class="feature-card">
+                    <div class="feature-icon">〽</div>
+                    <h3>Valoración Estratégica</h3>
+                    <p>No solo vendemos tu sitio, identificamos y destacamos su máximo potencial. Realizamos un análisis profundo de activos, tráfico y oportunidades para presentarlo como una inversión irresistible, atrayendo ofertas que reflejen su verdadero valor.</p>
+				</div>
+                <div class="feature-card">
+                    <div class="feature-icon">⋆⋆⋆⋆⋆</div>
+                    <h3>Resultados, No Promesas</h3>
+                    <p>Nuestro compromiso es tangible: precios superiores y ventas aceleradas. Nos alineamos con tu éxito, utilizando métodos probados que garantizan que tu sitio web se venda al mejor precio posible en el menor tiempo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Process -->
+    <section id="process" style="background: #f8f9fa;">
+        <div class="container">
+            <h2>Mi Proceso de Venta</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Evaluación Gratuita</h3>
+                    <p>Analizo tu sitio web y te doy una valoración real de mercado</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Optimización</h3>
+                    <p>Preparamos el listado perfecto con imágenes y descripción persuasiva</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Promoción</h3>
+                    <p>Promociono activamente tu sitio en mis redes y a compradores serios</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Venta</h3>
+                    <p>Manejo todas las ofertas y negociaciones para maximizar tu ganancia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about">
+        <div class="container">
+            <h2>Sobre Mí</h2>
+            <div class="about-content">
+                <div class="profile-img">
+                    <img src="C:/Users/JaviStars/Desktop/WebSite PRUEBA/Flores Digital Assets/images/personal-imagen.png" alt="Javier Flores">
+                </div>
+                <div>
+                    <h3>Javier Flores</h3>
+                    <p>Especialista en venta de activos digitales con amplia experiencia en el mercado de Flippa. Mi expertise está en identificar el valor real de los sitios web y conectar vendedores con compradores serios dispuestos a pagar precios premium.</p>
+                    <br>
+                    <p>Me dedico exclusivamente a ayudar a propietarios como tú a navegar el proceso de venta de manera eficiente, minimizando el estrés y maximizando los resultados. Entiendo las nuances del mercado y sé exactamente qué buscan los compradores serios.</p>
+                    <br>
+                    <p><strong>Mi promesa:</strong> Solo cobro comisión cuando tu sitio se vende exitosamente. Tu éxito es mi éxito.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" style="background: #f8f9fa;">
+        <div class="container">
+            <h2>Evaluación Gratuita de Tu Sitio Web</h2>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Tu Nombre</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="website">URL de Tu Sitio Web</label>
+                        <input type="url" id="website" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="traffic">Tráfico Mensual (visitantes)</label>
+                        <input type="number" id="traffic" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="revenue">Ingresos Mensuales (USD)</label>
+                        <input type="number" id="revenue" required>
+                    </div>
+                    <button type="submit">Enviar para Evaluación Gratuita</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Flores Digital Assets. Especialistas en venta de sitios web en Flippa.</p>
+            <p>Contacto: contacto.floresdigitalassets@gmail.com</p>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias! Te contactaré dentro de 24 horas con tu evaluación gratuita.');
+            this.reset();
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
