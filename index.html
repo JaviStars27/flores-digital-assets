@@ -351,36 +351,36 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" style="background: #f8f9fa;">
-        <div class="container">
-            <h2>Evaluación Gratuita de Tu Sitio Web</h2>
-            <div class="contact-form">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Tu Nombre</label>
-                        <input type="text" id="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="website">URL de Tu Sitio Web</label>
-                        <input type="url" id="website" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="traffic">Tráfico Mensual (visitantes)</label>
-                        <input type="number" id="traffic" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="revenue">Ingresos Mensuales (USD)</label>
-                        <input type="number" id="revenue" required>
-                    </div>
-                    <button type="submit">Enviar para Evaluación Gratuita</button>
-                </form>
-            </div>
+<section id="contact" style="background: #f8f9fa;">
+    <div class="container">
+        <h2>Evaluación Gratuita de Tu Sitio Web</h2>
+        <div class="contact-form">
+            <form name="contacto" method="POST" netlify>
+                <div class="form-group">
+                    <label for="name">Tu Nombre</label>
+                    <input type="text" id="name" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="website">URL de Tu Sitio Web</label>
+                    <input type="url" id="website" name="sitio_web" required>
+                </div>
+                <div class="form-group">
+                    <label for="traffic">Tráfico Mensual (visitantes)</label>
+                    <input type="number" id="traffic" name="trafico_mensual" required>
+                </div>
+                <div class="form-group">
+                    <label for="revenue">Ingresos Mensuales (USD)</label>
+                    <input type="number" id="revenue" name="ingresos_mensuales" required>
+                </div>
+                <button type="submit">Enviar para Evaluación Gratuita</button>
+            </form>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer>
@@ -391,22 +391,18 @@
     </footer>
 
     <script>
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+    // Smooth scroll (mantener esto)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            alert('¡Gracias! Te contactaré dentro de 24 horas con tu evaluación gratuita.');
-            this.reset();
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
             });
         });
-    </script>
+    });
+
+    // ELIMINAR la función de alerta anterior
+    // Netlify manejará el envío automáticamente
+</script>
 </body>
 </html>
