@@ -24,7 +24,7 @@ Sitio web profesional para servicios de broker especializado en ayudar a vendedo
 - **Servicio:** Broker para ventas en Flippa
 
 ## 🌐 Demo en Vivo
-[Ver sitio web funcionando](https://flores-digital-assets.netlify.app)
+[Ver sitio web funcionando](https://floresdigitalassets.netlify.app/)
 
 ## 💼 Servicios Ofrecidos
 - Valoración profesional de sitios web
